@@ -1,0 +1,211 @@
+﻿<!-- ------------------------------------------------
+Copyright © Microsoft Corporation. All rights reserved
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+------------------------------------------------ -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <link href="Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/angular.min.js"></script>
+    <link href="Content/my.css" rel="stylesheet" />
+    <script src="Scripts/app.js"></script>
+
+
+</head>
+<body ng-app="app">
+
+    <div class="container my-margin-top" ng-controller="myController">
+        <div class="panel panel-info">
+            <div class="panel-heading">Student Information</div>
+            <div class="panel-body">
+                <form class="form-horizontal">
+                    <fieldset>
+
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="fullname">Full Name</label>
+                            <div class="col-md-4">
+                                <input id="fullname"  type="text" placeholder="" class="form-control input-md" required="" ng-class="{'is-required': frmLead.FullName.$invalid}" ng-pattern="/^(\D)+$/" ng-model="frmLead.FullName" ng-maxlength="30" name="FullName" msg-propover="(frmLead.FullName.$invalid && !frmLead.FullName.$pristine)" formfield="frmLead.FullName">
+
+                            </div>
+                        </div>
+
+                        <!-- Multiple Radios -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="gender">Gender</label>
+                            <div class="col-md-4">
+                                <div class="radio">
+                                    <label for="gender-0">
+                                        <input type="radio" id="gender-0" value="MALE" checked="checked" ng-class="{'is-required': frmLead.FullName.$invalid}"  ng-model="frmLead.Gender" ng-maxlength="30" name="Gender" msg-propover="(frmLead.Gender.$invalid && !frmLead.Gender.$pristine)" formfield="frmLead.Gender">
+                                        Male
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label for="gender-1">
+                                        <input type="radio" id="gender-1" value="FEMALE"  ng-class="{'is-required': frmLead.FullName.$invalid}"  ng-model="frmLead.Gender" ng-maxlength="30" name="Gender" msg-propover="(frmLead.Gender.$invalid && !frmLead.Gender.$pristine)" formfield="frmLead.Gender">
+                                        Female
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Textarea -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="address">Residential Address</label>
+                            <div class="col-md-4">
+                                <textarea class="form-control" id="address" ng-class="{'is-required': frmLead.Address.$invalid}"  ng-model="frmLead.Address" ng-maxlength="30" name="Address" msg-propover="(frmLead.Address.$invalid && !frmLead.Address.$pristine)" formfield="frmLead.Address" ></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="bloodgroup">Blood Group</label>
+                            <div class="col-md-4">
+                                <input id="bloodgroup"  type="text" placeholder="" class="form-control input-md" ng-class="{'is-required': frmLead.BloodGroup.$invalid}"  ng-model="frmLead.BloodGroup" ng-maxlength="30" name="BloodGroup" msg-propover="(frmLead.BloodGroup.$invalid && !frmLead.BloodGroup.$pristine)" formfield="frmLead.BloodGroup">
+
+                            </div>
+                        </div>
+
+                        <!-- Textarea -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="medcond">Known medical conditions / allergies</label>
+                            <div class="col-md-4">
+                                <textarea class="form-control" id="medcond" ng-class="{'is-required': frmLead.MedicalDetails.$invalid}"  ng-model="frmLead.MedicalDetails" ng-maxlength="30" name="MedicalDetails" msg-propover="(frmLead.MedicalDetails.$invalid && !frmLead.MedicalDetails.$pristine)" formfield="frmLead.MedicalDetails"></textarea>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+        <div class="panel panel-info my-margin-top">
+            <div class="panel-heading">Parent Information</div>
+            <div class="panel-body">
+                <form class="form-horizontal">
+                    <fieldset>
+
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="fathername">Father's Name</label>
+                            <div class="col-md-4">
+                                <input id="fathername"  type="text" placeholder="" class="form-control input-md" ng-class="{'is-required': frmLead.FatherName.$invalid}"  ng-model="frmLead.FatherName" ng-maxlength="30" name="FatherName" msg-propover="(frmLead.FatherName.$invalid && !frmLead.FatherName.$pristine)" formfield="frmLead.FatherName">
+
+                            </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="fatheredu">Father's Education</label>
+                            <div class="col-md-4">
+                                <input id="fatheredu"  type="text" placeholder="" class="form-control input-md" ng-class="{'is-required': frmLead.FatherEducation.$invalid}"  ng-model="frmLead.FatherEducation" ng-maxlength="30" name="FatherEducation" msg-propover="(frmLead.FatherEducation.$invalid && !frmLead.FatherEducation.$pristine)" formfield="frmLead.FatherEducation">
+
+                            </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="fatheroccu">Father's Occupation</label>
+                            <div class="col-md-4">
+                                <input id="fatheroccu"  type="text" placeholder="" class="form-control input-md" ng-class="{'is-required': frmLead.FatherOccupation.$invalid}"  ng-model="frmLead.FatherOccupation" ng-maxlength="30" name="FatherOccupation" msg-propover="(frmLead.FatherOccupation.$invalid && !frmLead.FatherOccupation.$pristine)" formfield="frmLead.FatherOccupation">
+                            </div>
+                        </div>
+
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="motherrname">Mother's Name</label>
+                            <div class="col-md-4">
+                                <input id="motherrname" type="text" placeholder="" class="form-control input-md" ng-class="{'is-required': frmLead.MotherName.$invalid}"  ng-model="frmLead.MotherName" ng-maxlength="30" name="MotherName" msg-propover="(frmLead.MotherName.$invalid && !frmLead.MotherName.$pristine)" formfield="frmLead.MotherName">
+
+                            </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="motheredu">Mother's Education</label>
+                            <div class="col-md-4">
+                                <input id="motheredu" type="text" placeholder="" class="form-control input-md" ng-class="{'is-required': frmLead.MotherEducation.$invalid}"  ng-model="frmLead.MotherEducation" ng-maxlength="30" name="MotherEducation" msg-propover="(frmLead.MotherEducation.$invalid && !frmLead.MotherEducation.$pristine)" formfield="frmLead.MotherEducation">
+
+                            </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="motheroccu">Mother's Occupation</label>
+                            <div class="col-md-4">
+                                <input id="motheroccu" type="text" placeholder="" class="form-control input-md" ng-class="{'is-required': frmLead.MotherOccupation.$invalid}"  ng-model="frmLead.MotherOccupation" ng-maxlength="30" name="MotherOccupation" msg-propover="(frmLead.MotherOccupation.$invalid && !frmLead.MotherOccupation.$pristine)" formfield="frmLead.MotherOccupation">
+                            </div>
+                        </div>
+
+                        <!-- Prepended text-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="mobilenum">Mobile Number</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon">+91</span>
+                                    <input id="mobilenum"  class="form-control" placeholder="" type="text" required="" ng-class="{'is-required': frmLead.MobileNum.$invalid}"  ng-model="frmLead.MobileNum" ng-maxlength="30" name="MobileNum" msg-propover="(frmLead.MobileNum.$invalid && !frmLead.MobileNum.$pristine)" formfield="frmLead.MobileNum">
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Prepended text-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="mobilenum2">Secondary Mobile Number</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon">+91</span>
+                                    <input id="mobilenum2" class="form-control" placeholder="" type="text" required="" ng-class="{'is-required': frmLead.MobileNum2.$invalid}" ng-model="frmLead.MobileNum2" ng-maxlength="30" name="MobileNum2" msg-propover="(frmLead.MobileNum2.$invalid && !frmLead.MobileNum2.$pristine)" formfield="frmLead.MobileNum2">
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Prepended text-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="emergencymobilenum">Emergency Mobile Number</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon">+91</span>
+                                    <input id="mobilenumemergency" class="form-control" placeholder="" type="text" required="" ng-class="{'is-required': frmLead.MobileNumEmergency.$invalid}" ng-model="frmLead.MobileNumEmergency" ng-maxlength="30" name="MobileNumEmergency" msg-propover="(frmLead.MobileNumEmergency.$invalid && !frmLead.MobileNumEmergency.$pristine)" formfield="frmLead.MobileNumEmergency">
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <!-- Button -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="studentsubmit"></label>
+                            <div class="col-md-4">
+                                <button ng-click="submit()" id="studentsubmit" name="studentsubmit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+</html>

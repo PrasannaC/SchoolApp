@@ -1,0 +1,18 @@
+﻿<div style="">
+    <div ng-if="formfield.$error.fcsaNumber">Please enter valid number...</div>
+
+    <!-- the required message is displayed first... -->
+    <div ng-if="formfield.$error.pattern">You entered invalid value...</div>
+
+    <!-- the required message is displayed first... -->
+    <div ng-if="formfield.$error.required">You left the field blank ...</div>
+
+    <!-- then, incase the message is too short, show the message right after -->
+    <div ng-if="formfield.$error.minlength">Your field is too short</div>
+
+    <!-- of if is too long then let us know -->
+    <div ng-if="formfield.$error.maxlength">Your field is too long</div>
+
+    <!-- otherwise let us know if the email itself is invalid -->
+    <div ng-if="formfield.$error.email">Your field has an invalid email address</div>
+</div>
