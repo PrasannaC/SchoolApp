@@ -3,3 +3,4 @@ C:\Users\Prasanna\Documents\Visual Studio 2015\Projects\School App\School App\bi
 C:\Users\Prasanna\Documents\Visual Studio 2015\Projects\School App\School App\bin\School App.pdb
 C:\Users\Prasanna\Documents\Visual Studio 2015\Projects\School App\School App\obj\Debug\School App.dll
 C:\Users\Prasanna\Documents\Visual Studio 2015\Projects\School App\School App\obj\Debug\School App.pdb
+C:\Users\Prasanna\documents\visual studio 2015\Projects\School App\School App\obj\Debug\School App.csprojResolveAssemblyReference.cache

@@ -1,15 +1,20 @@
 ﻿
-var app = angular.module('app', []); 
+var app = angular.module('app', ['firebase']);
 
 
-app.controller("myController", function ($window, $scope) {
-    
+app.controller("myController", function ($window, $scope, $firebaseObject) {
 
+    console.log("Controller Hit");
+    $scope.submit = function () {
 
-    function submit() {
+        var ref = new Firebase("https://genius-academy.firebaseio.com/");
 
+        $scope.student.parentData = $scope.parent;
+        var ref2 = ref.child("students").push();
+        console.log($scope.student);
+        ref2.set($scope.student);
     }
-    
+
 
 });
 
